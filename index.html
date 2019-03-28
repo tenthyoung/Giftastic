@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Giftastic!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/animate.css" />
+</head>
+<body>
+    <div id="navAndJumbotron">
+        <div id="jumbotron" class="jumbotron">
+            <nav  id="nav" class="navbar">
+                <a class="navbar-brand display-4" href="index.html"> Giftastic</a>
+            </nav>
+            <div id="leadContainer">
+                <p class="lead d-none">Write a topic. Create a button. Generate Gifs.
+                </p>
+            </div>
+            <div id="searchBarDiv" class="input-group">
+                <textarea id="searchBar" class="form-control" aria-label="With textarea"></textarea>
+            </div>
+            <a class="btn btn-lg" href="#" role="button">Generate Button</a>
+            <a class="btn btn-lg" href="#" role="button">Clear Gifs</a>
+            <!-- <hr class="my-4"> -->
+        </div>
+    </div>
+
+    <div id="buttonsAndGifsContainer">
+        <a class="btn btn-sm" data-person="happy" href="#" role="button">Happy</a>
+        <a class="btn btn-sm" data-person="congrats" href="#" role="button">Congrats</a>
+        <a class="btn btn-sm" data-person="dance" href="#" role="button">Dance</a>
+        <a class="btn btn-sm" data-person="laugh" href="#" role="button">Laugh</a>
+        <a class="btn btn-sm" data-person="angry" href="#" role="button">Angry</a>
+
+        <br>
+
+        <div id="gifsContainer">
+            
+        </div>
+    </div>
+
+
+
+    <script src="./assets/javascript/jquery.js"></script>
+    <script src="./assets/javascript/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+</body>
+</html>
