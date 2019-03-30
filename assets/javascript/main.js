@@ -1,4 +1,5 @@
 var topics = ['Happy', 'Congrats', 'Dance', 'Laugh']
+var giphyResults = {};
 
 $(document).ready(function() {
     addCreateTopicButtonListener();   
@@ -17,36 +18,46 @@ $(document).ready(function() {
           url: queryURL,
           method: "GET"
         })
-          .then(function(response) {
-            var results = response.data;
-            console.log(results)
+        .then(function(response) {
+            giphyResults = response.data;
 
-            for (var i = 0; i < results.length; i++) {
-              var gifDiv = $("<div>");
-  
-              var rating = results[i].rating;
-  
-              var p = $("<p>").text("Rating: " + rating);
-  
-              var topicImage = $("<img>");
-              topicImage.addClass('gif');
-              topicImage.attr("src", results[i].images.fixed_height.url);
-  
-              gifDiv.prepend(p);
-              gifDiv.prepend(topicImage);
-  
-              $("#gifsContainer").prepend(gifDiv);
+            $.each(giphyResults, function (key,value) {
+                var gifDiv = $("<div id="+key+">");
+                gifDiv.addClass('gif');
+                
+                var rating = giphyResults[key].rating;
+                var p = $("<p>").text("Rating: " + rating);
+                
+                var topicImage = $("<img>");
+                topicImage.attr("src", giphyResults[key].images.fixed_height_still.url);
+                
+                gifDiv.prepend(p);
+                gifDiv.prepend(topicImage);
+    
+                $("#gifsContainer").prepend(gifDiv);
 
-            //   $(document).on('click','.gif', function () {
-            //       topicImage.attr('src', result[i].images.fixed_height.url);
-            //   });
-            }
-          });
-      });
+                $(document).on('click', '#'+key , function () {
+                    console.log($('#'+key));
+                    topicImage.attr("src", giphyResults[key].images.fixed_height.url);
+                    
+                    
+                });
+            });
 
+        });
+
+    });
+
+    
 
 
 });
+
+function addGifClickEvent() {
+    // $(document).on('click','.gif', function () {
+    //     .attr('src', giphyResults.key);
+    // });
+}
 
 function startingAnimation () {
     setTimeout(function(){
