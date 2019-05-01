@@ -12,7 +12,14 @@ $(document).ready(function() {
     $(document).on("click ", '.topic-btn', function() {
         var topicOfButton = $(this).attr("data-topic");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-          topicOfButton + "&api_key=dc6zaTOxFJmzC&limit=10";
+          topicOfButton + "&api_key=fNDrarOYEB8zX8lMfPgf1PzyyjUvJJP4";
+
+    //     $.ajaxPrefilter(function(options) {
+    //        if (options.crossDomain && $.support.cors) {
+    //            options.url = 'https://cors-anywhere.herokuapp.com/' + options.queryURL;
+    //        }
+    //    });
+
   
         $.ajax({
           url: queryURL,
@@ -21,7 +28,7 @@ $(document).ready(function() {
         .then(function(response) {
             giphyResults = response.data;
 
-            $.each(giphyResults, function (key,value) {
+            $.each(giphyResults, function (key) {
                 var gifDiv = $("<div id="+key+">");
                 gifDiv.addClass('gif');
                 
